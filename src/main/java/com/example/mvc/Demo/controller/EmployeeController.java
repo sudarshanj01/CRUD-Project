@@ -5,10 +5,8 @@ import com.example.mvc.Demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 @Controller
 public class EmployeeController {
@@ -16,11 +14,13 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
     @GetMapping("/")
     public String viewHomePage(Model model){
         model.addAttribute("employeeList",employeeService.getAllEmployees());
         return "index";
     }
+
 
     @GetMapping("/showNewEmployeeForm")
     public String showNewEmployeeForm(Model model){

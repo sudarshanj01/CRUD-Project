@@ -6,9 +6,14 @@ public interface EmployeeService {
 
     List<Employee> getAllEmployees();
 
-    void saveEmployee(Employee employee);
+    Employee saveEmployee(Employee employee);
 
     Employee getEmployeeById(long id);
 
     void deleteEmployeeById(long id);
+
+    //for rest controller
+    boolean deleteEmployee(Long id);
+
+    Employee updateEmployee(Long id, Employee employee);
 }

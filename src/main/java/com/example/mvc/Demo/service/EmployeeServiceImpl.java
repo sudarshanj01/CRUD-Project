@@ -20,8 +20,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public void saveEmployee(Employee employee) {
-        this.employeeRepository.save(employee);
+    public Employee saveEmployee(Employee employee) {
+        return this.employeeRepository.save(employee);
     }
 
     @Override
@@ -41,6 +41,25 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public void deleteEmployeeById(long id) {
         this.employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean deleteEmployee(Long id) {
+        Employee employee = employeeRepository.findById(id).get();
+        employeeRepository.delete(employee);
+        return true;
+    }
+
+    @Override
+    public Employee updateEmployee(Long id, Employee employee) {
+        Employee employee1
+                = employeeRepository.findById(id).get();
+        employee1.setEmail(employee.getEmail());
+        employee1.setFirstName(employee.getFirstName());
+        employee1.setLastName(employee.getLastName());
+
+        employeeRepository.save(employee1);
+        return employee;
     }
 
 
