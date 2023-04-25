@@ -14,13 +14,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-
     @GetMapping("/")
     public String viewHomePage(Model model){
         model.addAttribute("employeeList",employeeService.getAllEmployees());
         return "index";
     }
-
 
     @GetMapping("/showNewEmployeeForm")
     public String showNewEmployeeForm(Model model){

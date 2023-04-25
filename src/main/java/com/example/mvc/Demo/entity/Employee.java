@@ -17,6 +17,9 @@ public class Employee {
 
     @Column(name = "email")
     private String email;
+
+
+
     public long getId() {
         return id;
     }
@@ -29,9 +32,7 @@ public class Employee {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    public String getLastName() {
-        return lastName;
-    }
+    public String getLastName() {return lastName;}
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -41,4 +42,6 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.example.mvc.Demo.controller;
 import com.example.mvc.Demo.entity.Employee;
 import com.example.mvc.Demo.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -11,10 +12,11 @@ import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api")
 public class EmployeeRestController {
 
     private final EmployeeService employeeService;
+
 
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
