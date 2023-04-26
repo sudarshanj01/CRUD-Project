@@ -2,6 +2,7 @@ package com.example.mvc.Demo.controller;
 
 import com.example.mvc.Demo.entity.Employee;
 import com.example.mvc.Demo.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.Map;
 @RequestMapping("/api")
 public class EmployeeRestController {
 
+    @Autowired
     private final EmployeeService employeeService;
 
 

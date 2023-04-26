@@ -27,7 +27,6 @@ public class EmployeeController {
         return "new_employee";
     }
 
-
     @PostMapping("/saveEmployee")
     public String saveEmployee (@ModelAttribute("employee") Employee employee){
         employeeService.saveEmployee(employee);
